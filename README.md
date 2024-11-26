@@ -12,11 +12,11 @@ No "real life" problem can be fixed with this dataset, but since it is a subject
 ## Exploration
 Choice is the value to see what we want to see. Launching it with a correct choice value with open a new page with the informations on it.
 
-**Choice 1** is for summary informations such as the mean, the count and many others.
-**Choice 2** is for the missing values and the type of the data. 
-**Choice 3** is to see the data distributions. It doesn't show some informations because they aren"t useful and show nothing interesting.
-**Choice 4** is for visualizing relationship through pairplot and a correclation heatmap.
-Finally, **choice 5** is for the distribution of some of the game by platform, genre and type of rating (the rating isn't a useful feature of this dataset).
+- **Choice 1** is for summary informations such as the mean, the count and many others.
+- **Choice 2** is for the missing values and the type of the data. 
+- **Choice 3** is to see the data distributions. It doesn't show some informations because they aren"t useful and show nothing interesting.
+- **Choice 4** is for visualizing relationship through pairplot and a correclation heatmap.
+- Finally, **choice 5** is for the distribution of some of the game by platform, genre and type of rating (the rating isn't a useful feature of this dataset).
 
 ## Preprocessing
 There are missing values in the dataset, a lot of them is you used "choice = 2", but they all come from one source, which is Nintendo. The dataset doesn't show critic scores associated with Nintendo games, but only them.
@@ -26,5 +26,5 @@ There are missing values in the dataset, a lot of them is you used "choice = 2",
 # Credits
 The Dataset was taken from the website "Kaggle" at [this url](https://www.kaggle.com/datasets/sidtwr/videogames-sales-dataset?resource=download).
 
-DELWAIL Hugo 
-AININE Nassim
+- DELWAIL Hugo 
+- AININE Nassim
