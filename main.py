@@ -6,13 +6,25 @@ from tkinter import ttk
 from tkinter import Scrollbar
 import seaborn as sns
 
+from sklearn.preprocessing import MinMaxScaler, LabelEncoder
+from tkinter import ttk, Scrollbar
+from tkinter import Tk, Frame
+
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+from sklearn.decomposition import PCA
+
+#aggromerative clustering
+from sklearn.cluster import AgglomerativeClustering
+from scipy.cluster.hierarchy import dendrogram, linkage
+
 # Load the CSV file
 file_path = "VideoGameSales.csv"  # Replace with your file path
 df = pd.read_csv(file_path, encoding="latin1")
 
 
 
-choice = 0
+choice = 6
 
 
 
@@ -112,3 +124,5 @@ if choice == 5:
             plt.ylabel(col)
             plt.tight_layout()
             plt.show()
+
+
