@@ -24,7 +24,8 @@ There are missing values in the dataset, a lot of them is you used "choice = 2",
 
 
 # Credits
-The Dataset was taken from the website "Kaggle" at [this url](https://www.kaggle.com/datasets/sidtwr/videogames-sales-dataset?resource=download).
+DELWAIL Hugo 
+ 
+ AININE Nassim
 
-- DELWAIL Hugo 
-- AININE Nassim
+
