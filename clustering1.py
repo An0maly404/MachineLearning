@@ -15,21 +15,18 @@ from tkinter import Tk, Frame
 from sklearn.cluster import KMeans
 from sklearn.model_selection import train_test_split
 
-#2
-
-
 
 # Objective: To identify if there is a link between sales and scores
 # Secondary Objective : Is it better to rely on the scores of the press or users?
 
 
 # Load the CSV file
-file_path = "VideoGameSales.csv"  # Replace with your file path
+file_path = "VideoGameSales.csv"
 df = pd.read_csv(file_path, encoding="latin1")
 
 
 # Preprocessing
-# Hande missing values
+# Handle missing values
 numeric_cols_with_na = ['Critic_Score', 'User_Score', 'Critic_Count', 'User_Count']
 for col in numeric_cols_with_na:
     df[col] = df[col].fillna(df[col].mean())
@@ -45,6 +42,7 @@ df['Name'] = df['Name'].fillna('Unknown')
 scaler = MinMaxScaler()
 numeric_cols = ['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'Global_Sales',
                 'Critic_Score', 'User_Score', 'Critic_Count', 'User_Count']
+
 df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
 
 # Encoding categorical columns
@@ -215,38 +213,3 @@ plt.show()
 
 
 
-
-
-
-
-
-"""
-
-# Clustering 2 : Basé sur Ventes + Critiques
-X_critics = df[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'Critic_Score']]
-
-kmeans_critics = KMeans(n_clusters=3, random_state=42)
-df['Cluster_Critics'] = kmeans_critics.fit_predict(X_critics)
-
-# Affichage des moyennes des colonnes numériques par cluster
-print("\nMoyennes par cluster (Ventes + Critiques) :")
-print(df[['NA_Sales', 'EU_Sales', 'Critic_Score', 'Cluster_Critics']].groupby('Cluster_Critics').mean())
-
-# Afficher des exemples de jeux par cluster avec les noms
-print("\nExemples pour Clustering basé sur Ventes + Critiques :")
-for cluster in df['Cluster_Critics'].unique():
-    print(f"\nExemples pour le cluster {cluster} :")
-    print(df[df['Cluster_Critics'] == cluster][['Name', 'NA_Sales', 'EU_Sales', 'Critic_Score']].head(10))
-
-# Visualisation pour Ventes + Critiques
-pca_critics = PCA(n_components=2)
-reduced_features_critics = pca_critics.fit_transform(X_critics)
-plt.scatter(reduced_features_critics[:, 0], reduced_features_critics[:, 1], c=df['Cluster_Critics'], cmap='plasma', s=10)
-plt.title("Clusters pour Ventes et Critiques (K-Means)")
-plt.xlabel("Score des critique")
-plt.ylabel("Variations des ventes régionales")
-plt.colorbar(label="Cluster")
-plt.show()
-
-
-"""
