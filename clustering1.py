@@ -58,7 +58,7 @@ for col in categorical_cols:
 
 
 # 1 : Divide data in train and test
-X_critics = df[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'Critic_Score']]
+X_critics = df[['Critic_Score', 'Global_Sales']]
 X_train, X_test = train_test_split(X_critics, test_size=0.3, random_state=42)
 
 
@@ -144,7 +144,7 @@ plt.show()
 
 
 # 1 : Divide data in train and test
-X_users = df[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'User_Score']]
+X_users = df[['User_Score', 'Global_Sales']]
 X_train, X_test = train_test_split(X_users, test_size=0.3, random_state=42)
 
 
